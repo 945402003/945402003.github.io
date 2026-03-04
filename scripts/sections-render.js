@@ -115,9 +115,50 @@
       .join("");
   };
 
+  const renderProjects = (items, targetId) => {
+    const container = document.getElementById(targetId);
+    if (!container) {
+      return;
+    }
+
+    container.innerHTML = (items || [])
+      .map((item) => {
+        const linksHtml = (item.links || [])
+          .map((link) => {
+            const icon = link.icon ? `<i class="${link.icon}"></i>` : "";
+            const cls = link.className ? `link-chip ${link.className}` : "link-chip";
+            return `<a class="${cls}" href="${link.href}">${icon}${link.text}</a>`;
+          })
+          .join("");
+        const extraHtml = item.extraHtml || "";
+        const venueHtml = item.venue ? `${item.venue}
+                <br>` : "";
+
+        return `
+          <tr>
+            <td class="content-cell">
+              <span class="papertitle">${item.title}</span>
+              <br>
+              <span class="authors-line">${highlightAuthor(item.authors || "")}</span>
+              <br>
+              ${venueHtml}
+              ${linksHtml}
+              ${extraHtml}
+            </td>
+            <td class="thumb-cell">
+              <a href="${item.image?.src || ""}"><img src="${item.image?.src || ""}" alt="${item.image?.alt || ""}"></a>
+            </td>
+          </tr>
+        `;
+      })
+      .join("");
+  };
+
 
   renderAwards(window.awardsData, "selected-awards");
   renderResearchExperience(window.researchExperienceData, "research-experience");
+  // projects data may use the same format as publications, render here if available
+  renderProjects(window.projectData, "projects-content");
   renderIntro(window.introData, "intro-sidebar");
   renderBiography(window.introData, "biography-content");
 

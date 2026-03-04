@@ -58,7 +58,4 @@
   renderPublications(data.selectedPreprints, "selected-preprints");
 
   // render projects if available (same format as publications)
-  if (window.projectData) {
-    renderPublications(window.projectData, "projects-content");
-  }
 })();
