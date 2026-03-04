@@ -18,7 +18,6 @@
   window.publicationData = {
     recentPublications: [
       {
-        image: { src: "images/unifiedreward-think_teaser.png", alt: "UnifiedReward Think teaser" },
         title: "Unified Multimodal Chain-of-Thought Reward Model through Reinforcement Fine-Tuning",
         authors: "<strong>Yibin Wang</strong>, Zhimin Li, Yuhang Zang, Chunyu Wang, Qinglin Lu, Cheng Jin, Jiaqi Wang.",
         venue: '<span class="venue venue-neurips">NeurIPS</span>, 2025',
