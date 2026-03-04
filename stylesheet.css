@@ -359,16 +359,6 @@ h2 {
   font-weight: 700;
 }
 
-.other-publications .paper-title {
-  font-size: 19px;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.other-publications .paper-authors {
-  color: var(--muted);
-  font-size: 15px;
-}
 
 .name {
   padding-top: 20px;

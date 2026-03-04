@@ -78,17 +78,6 @@
       .join("");
   };
 
-  const renderOtherPublications = (items, targetId) => {
-    const container = document.getElementById(targetId);
-    if (!container) {
-      return;
-    }
-
-    container.innerHTML = (items || [])
-      .map((item) => `<p>${highlightAuthor(String(item).trim())}</p>`)
-      .join("");
-  };
-
   const renderResearchExperience = (items, targetId) => {
     const container = document.getElementById(targetId);
     if (!container) {
@@ -158,7 +147,6 @@
   };
 
   renderAwards(window.awardsData, "selected-awards");
-  renderOtherPublications(window.otherPublicationsData, "other-publications");
   renderResearchExperience(window.researchExperienceData, "research-experience");
   renderIntro(window.introData, "intro-sidebar");
   renderBiography(window.introData, "biography-content");
