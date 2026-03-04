@@ -5,7 +5,7 @@
 
     <title>Yibin Wang</title>
 
-    <meta name="author" content="Yibin Wang">
+    <meta name="author" content="Zhengyi Yang">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="https://picx.zhimg.com/v2-cb40b1f8c3125f3cfb9a4538e1c0f2b7_l.jpg?source=32738c0c" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,7 +17,7 @@
   <body>
     <nav class="top-nav">
       <div class="nav-inner">
-        <a class="nav-brand" href="#top">Yibin Wang</a>
+        <a class="nav-brand" href="#top">Zhengyi Yang</a>
         <div class="nav-links">
           <a href="#biography-section">Biography</a>
           <a href="#recent-publications-section">Publications</a>
@@ -125,21 +125,5 @@
         </td>
       </tr>
     </table> -->
-
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script>
-      window.onload = function () {
-          var gsDataBaseUrl = 'https://raw.githubusercontent.com/codegoat24/assets/'
-          $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {  
-              var citationEles = document.getElementsByClassName('show_paper_citations')
-              Array.prototype.forEach.call(citationEles, element => {
-                  var paperId = element.getAttribute('data')
-                  var numCitations = data['publications'][paperId]['num_citations']
-                  element.innerHTML = numCitations;
-              });
-          });
-      }
-  </script>
   </body>
 </html>
