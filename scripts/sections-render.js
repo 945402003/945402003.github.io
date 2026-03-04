@@ -1,11 +1,11 @@
 (() => {
   const highlightAuthor = (html) => {
     let text = String(html).replace(
-      /<strong>Yibin Wang<\/strong>/g,
-      '<span class="author-me">Yibin Wang</span>'
+      /<strong>Zhengyi Yang<\/strong>/g,
+      '<span class="author-me">Zhengyi Yang</span>'
     );
     if (!text.includes("author-me")) {
-      text = text.replace(/\bYibin Wang\b/g, '<span class="author-me">Yibin Wang</span>');
+      text = text.replace(/\bZhengyi Yang\b/g, '<span class="author-me">Zhengyi Yang</span>');
     }
     return text;
   };
@@ -115,43 +115,11 @@
       .join("");
   };
 
-  // build a simple projects list by extracting links flagged with class "project"
-  const renderProjects = (data, targetId) => {
-    const container = document.getElementById(targetId);
-    if (!container || !data) {
-      return;
-    }
-
-    const items = [];
-    [data.recentPublications || [], data.selectedPreprints || []].forEach((list) => {
-      list.forEach((pub) => {
-        (pub.links || []).forEach((link) => {
-          if (link.className && link.className.includes("project")) {
-            items.push({ title: pub.title, href: link.href });
-          }
-        });
-      });
-    });
-
-    // remove duplicates if any
-    const unique = [];
-    items.forEach((it) => {
-      if (!unique.some((u) => u.href === it.href)) {
-        unique.push(it);
-      }
-    });
-
-    container.innerHTML = unique
-      .map((p) => `<p><a href="${p.href}" target="_blank">${p.title}</a></p>`)
-      .join("");
-  };
 
   renderAwards(window.awardsData, "selected-awards");
   renderResearchExperience(window.researchExperienceData, "research-experience");
   renderIntro(window.introData, "intro-sidebar");
   renderBiography(window.introData, "biography-content");
-  // render the projects section using publication data (if available)
-  renderProjects(window.publicationData, "projects-content");
 
   const setupNavSpy = () => {
     const navLinks = Array.from(document.querySelectorAll(".nav-links a"));

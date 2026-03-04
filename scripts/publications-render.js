@@ -6,11 +6,11 @@
 
   const highlightAuthor = (html) => {
     let text = String(html).replace(
-      /<strong>Yibin Wang<\/strong>/g,
-      '<span class="author-me">Yibin Wang</span>'
+      /<strong>Zhengyi Yang<\/strong>/g,
+      '<span class="author-me">Zhengyi Yang</span>'
     );
     if (!text.includes("author-me")) {
-      text = text.replace(/\bYibin Wang\b/g, '<span class="author-me">Yibin Wang</span>');
+      text = text.replace(/\bZhengyi Yang\b/g, '<span class="author-me">Zhengyi Yang</span>');
     }
     return text;
   };
@@ -56,4 +56,9 @@
 
   renderPublications(data.recentPublications, "recent-publications");
   renderPublications(data.selectedPreprints, "selected-preprints");
+
+  // render projects if available (same format as publications)
+  if (window.projectData) {
+    renderPublications(window.projectData, "projects-content");
+  }
 })();
