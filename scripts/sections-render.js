@@ -15,8 +15,11 @@
     if (!container || !data) {
       return;
     }
+    // pick language-specific subobject
+    const lang = window.currentLanguage || 'en';
+    const info = data[lang] || data.en;
 
-    const linesHtml = (data.sidebarLines || [])
+    const linesHtml = (info.sidebarLines || [])
       .map((line) => {
         if (typeof line === "string") {
           return `<p class="sidebar-line">${line}</p>`;
@@ -26,7 +29,7 @@
       })
       .join("");
 
-    const linkItems = (data.links || []).map((link) => {
+    const linkItems = (info.links || []).map((link) => {
       const label = link.label ? ` aria-label="${link.label}" title="${link.label}"` : "";
       if (link.imgSrc) {
         return `<a href="${link.href}"${label}><img class="icon-hf" src="${link.imgSrc}" alt="${link.label || "Hugging Face"}"></a>`;
@@ -45,10 +48,10 @@
 
     container.innerHTML = `
       <div class="sidebar-card">
-        <a href="${data.avatar.src}">
-          <img alt="${data.avatar.alt}" src="${data.avatar.src}" class="hoverZoomLink avatar">
+        <a href="${info.avatar.src}">
+          <img alt="${info.avatar.alt}" src="${info.avatar.src}" class="hoverZoomLink avatar">
         </a>
-        <p class="sidebar-name">${data.name}</p>
+        <p class="sidebar-name">${info.name}</p>
         ${linesHtml}
         <div class="sidebar-links">${linksHtml}</div>
       </div>
@@ -60,8 +63,10 @@
     if (!container || !data) {
       return;
     }
+    const lang = window.currentLanguage || 'en';
+    const info = data[lang] || data.en;
 
-    const paragraphs = (data.bioParagraphs || [])
+    const paragraphs = (info.bioParagraphs || [])
       .map((paragraph) => `<p>${paragraph}</p>`)
       .join("");
     container.innerHTML = paragraphs;

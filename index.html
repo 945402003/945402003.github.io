@@ -7,7 +7,7 @@
 
     <meta name="author" content="Zhengyi Yang">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="https://picx.zhimg.com/v2-cb40b1f8c3125f3cfb9a4538e1c0f2b7_l.jpg?source=32738c0c" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="https://picx.zhimg.com/v2-cb40b1f8c3125f3cfb9a4538e1c0f2b7_l.jpg?source=32738c0c" type="image/x-icon"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -19,10 +19,13 @@
       <div class="nav-inner">
         <a class="nav-brand" href="#top">Zhengyi Yang</a>
         <div class="nav-links">
-          <a href="#biography-section">Biography</a>
-          <a href="#projects-section">Projects</a>
-          <a href="#recent-publications-section">Publications</a>
-          <a href="#research-experience-section">Experience</a>
+          <a href="#biography-section" data-i18n-key="biography">Biography</a>
+          <a href="#projects-section" data-i18n-key="projects">Projects</a>
+          <a href="#recent-publications-section" data-i18n-key="publications">Publications</a>
+          <a href="#research-experience-section" data-i18n-key="experience">Experience</a>
+          <span class="nav-separator">|</span>
+          <button id="lang-en" class="lang-btn active">EN</button>
+          <button id="lang-zh" class="lang-btn">中文</button>
         </div>
       </div>
     </nav>
@@ -35,7 +38,7 @@
           <table class="section-table" id="biography-section"><tbody>
               <tr>
               <td class="section-cell">
-                <h2>Biography</h2>
+                <h2 data-i18n-key="biography">Biography</h2>
                 <div id="biography-content"></div>
               </td>
             </tr>
@@ -45,8 +48,7 @@
           <table class="section-table" id="projects-section"><tbody>
             <tr>
               <td class="section-cell">
-                <h2>Projects</h2>
-                <!-- <div id="projects-content"></div> -->
+                <h2 data-i18n-key="projects">Projects</h2>
                 <table id="projects"></table>
               </td>
             </tr>
@@ -55,7 +57,7 @@
           <table class="section-table" id="recent-publications-section"><tbody>
               <tr>
               <td class="section-cell">
-                <h2>Publications</h2>
+                <h2 data-i18n-key="publications">Publications</h2>
                 <table id="recent-publications"></table>
               </td>
             </tr>
@@ -64,8 +66,9 @@
           <table class="section-table" id="research-experience-section"><tbody>
             <tr>
               <td class="section-cell">
-                <h2>Experience</h2>
+                <h2 data-i18n-key="experience">Experience</h2>
                 <table id="research-experience"></table>
+              </td>
               </td>
             </tr>
           </tbody></table>
@@ -75,6 +78,8 @@
       </div>
     </main>
 
+  <script src="scripts/i18n.js"></script>
+  <script src="scripts/language.js"></script>
   <script src="scripts/publications-data.js"></script>
   <script src="scripts/intro-data.js"></script>
   <script src="scripts/awards-data.js"></script>
