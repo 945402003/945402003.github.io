@@ -157,8 +157,7 @@
 
   renderAwards(window.awardsData, "selected-awards");
   renderResearchExperience(window.researchExperienceData, "research-experience");
-  // projects data may use the same format as publications, render here if available
-  renderProjects(window.projectData, "projects-content");
+  renderProjects(window.projectData, "projects");
   renderIntro(window.introData, "intro-sidebar");
   renderBiography(window.introData, "biography-content");
 

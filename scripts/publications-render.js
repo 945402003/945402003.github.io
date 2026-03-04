@@ -55,7 +55,7 @@
   };
 
   renderPublications(data.recentPublications, "recent-publications");
-  renderPublications(data.selectedPreprints, "selected-preprints");
+  // renderPublications(data.selectedPreprints, "selected-preprints");
 
   // render projects if available (same format as publications)
 })();
