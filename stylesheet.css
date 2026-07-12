@@ -295,6 +295,15 @@ table.section-table {
   scroll-margin-top: 84px;
 }
 
+#projects,
+#recent-publications,
+#research-experience {
+  width: 100%;
+  border: 0;
+  border-spacing: 0 12px;
+  border-collapse: separate;
+}
+
 table.pub-table td.thumb-cell img {
   width: 100%;
   height: auto;
@@ -385,6 +394,15 @@ h2 {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 19px;
   font-weight: 700;
+}
+
+.paper-subtitle {
+  display: inline-block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
 }
 
 
@@ -537,6 +555,7 @@ h2 {
 
 .org-title {
   font-size: 20px;
+  font-weight: 700;
 }
 
 .org-logo {
@@ -545,6 +564,22 @@ h2 {
   max-height: 160px;
   object-fit: contain;
   display: block;
+}
+
+.org-placeholder {
+  width: 100%;
+  min-height: 96px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #eef4ff;
+  color: #1b3b6f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-align: center;
 }
 
 .author-me {
@@ -564,14 +599,35 @@ h2 {
 
 .thumb-cell {
   padding: 18px 20px;
-  width: 42%;
+  width: 25%;
   vertical-align: middle;
 }
 
 .content-cell {
   padding: 18px 20px;
-  width: 58%;
+  width: 75%;
   vertical-align: middle;
+}
+
+.full-cell {
+  width: 100%;
+}
+
+.item-note {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.simple-list-item {
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.media-content {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  display: block;
 }
 
 .intro-text {
@@ -649,4 +705,15 @@ span.highlight {
   .nav-links {
     gap: 8px;
   }
+
+  .content-cell,
+  .thumb-cell {
+    display: block;
+    width: 100%;
+  }
+
+  .thumb-cell {
+    padding-top: 0;
+  }
+
 }

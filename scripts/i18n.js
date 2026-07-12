@@ -8,16 +8,19 @@
       projects: "Projects",
       publications: "Publications",
       experience: "Experience",
+      awards: "Awards",
       
       // 主页部分标签
       topicLabel: "Topic",
+      roleLabel: "Role",
       mentorLabel: "Mentor",
       mentorsLabel: "Mentors",
       locationLabel: "Location",
       datesLabel: "Dates",
       paperTitle: "Publications",
       projectTitle: "Projects",
-      experienceTitle: "Research Experience"
+      experienceTitle: "Internships",
+      awardsTitle: "Awards"
     },
     zh: {
       // 导航和标题
@@ -26,16 +29,19 @@
       projects: "项目经历",
       publications: "相关成果",
       experience: "实习经历",
+      awards: "奖项成就",
       
       // 主页部分标签
       topicLabel: "研究方向",
+      roleLabel: "角色",
       mentorLabel: "导师",
       mentorsLabel: "导师",
       locationLabel: "地点",
       datesLabel: "时间",
       paperTitle: "论文发表",
       projectTitle: "项目",
-      experienceTitle: "研究经历"
+      experienceTitle: "实习经历",
+      awardsTitle: "奖项成就"
     }
   };
 

@@ -62,6 +62,10 @@
     if (typeof renderResearchExperience === 'function' && window.researchExperienceData) {
       renderResearchExperience(window.researchExperienceData, 'research-experience');
     }
+    // 重新渲染奖项，使用最新语言
+    if (typeof renderAwards === 'function' && window.awardsData) {
+      renderAwards(window.awardsData, 'selected-awards');
+    }
   };
 
   // 页面加载时初始化

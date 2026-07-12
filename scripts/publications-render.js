@@ -9,8 +9,17 @@
       /<strong>Zhengyi Yang<\/strong>/g,
       '<span class="author-me">Zhengyi Yang</span>'
     );
+    text = text.replace(
+      /<strong>YANG Zhengyi<\/strong>/g,
+      '<span class="author-me">YANG Zhengyi</span>'
+    );
+    text = text.replace(
+      /<strong>杨正一<\/strong>/g,
+      '<span class="author-me">杨正一</span>'
+    );
     if (!text.includes("author-me")) {
       text = text.replace(/\bZhengyi Yang\b/g, '<span class="author-me">Zhengyi Yang</span>');
+      text = text.replace(/杨正一/g, '<span class="author-me">杨正一</span>');
     }
     return text;
   };
@@ -42,15 +51,20 @@
         const extraHtml = item.extraHtml || "";
         const venueHtml = item.venue ? `${item.venue}
                 <br>` : "";
+        const englishTitleHtml = item.englishTitle
+          ? `<br><span class="paper-subtitle">${item.englishTitle}</span>`
+          : "";
 
         const thumbHtml = item.image ? `<td class="thumb-cell">
               <a href="${item.image.src}"><img src="${item.image.src}" alt="${item.image.alt}"></a>
-            </td>` : `<td class="thumb-cell"></td>`;
+            </td>` : "";
+        const contentAttrs = item.image ? 'class="content-cell"' : 'class="content-cell full-cell" colspan="2"';
 
         return `
           <tr>
-            <td class="content-cell">
+            <td ${contentAttrs}>
               <span class="papertitle">${item.title}</span>
+              ${englishTitleHtml}
               <br>
               <span class="authors-line">${highlightAuthor(item.authors)}</span>
               <br>
